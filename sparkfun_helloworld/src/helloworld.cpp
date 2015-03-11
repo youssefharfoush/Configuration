@@ -5,7 +5,6 @@
  *      Author: apple
  */
 #include <mraa.h>
-//#include "Users/apple/Desktop/poky-edison-eglibc-i386-edison-image-core2-32-toolchain-1.6.1/sysroots/core2-32-poky-linux/usr/include/mraa/gpio.h"
 #include <iostream>
 #include <unistd.h>
 #include <stdio.h>
@@ -25,6 +24,7 @@ int main()
 
 	    //To store the LED state, starting true (HIGH)
 	    bool ledState=true;
+
 
 
 	    while(true){
@@ -47,11 +47,6 @@ int main()
 	          sleep(1);
 
 	    }
-
-
-
-
-
 
 
   return 0;
