@@ -267,15 +267,23 @@ sdpconnect:
 				if( status < 0 ) {
 					perror("uh oh");
 				}
-				do {
-					int iterations=0;
 
-					status = write(s, "Connection Established:"+iterations, 30);
+				int iterations=1;
+				char data[24] = {"Data: "};
+				char dig ;
+
+				do {
+					dig = (char)(((int)'0')+iterations);
+					data[6]=dig;
+					status = write(s, data, 24);
 					printf ("Wrote %d bytes\n", status);
+					printf(data);
+
 					sleep(1);
 
 					iterations++;
-					if(iterations>9){ iterations=0; }
+					if(iterations>9){iterations=0;}
+
 
 				} while (status > 0);
 				close(s);
